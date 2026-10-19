@@ -28,6 +28,5 @@ Textos del portfolio anterior que NO se han publicado porque no se pueden compro
 - La historia personal es cierta y vive en `/historia`. Textos reescritos con un tono más sencillo (pendiente de que Gustavo los revise).
 
 ## Fases siguientes
-- CV hecho (`public/cv-gustavo-delnardo.pdf`). Cuando la web esté en Vercel, añadir su URL al CV.
-- Tras desplegar: poner la URL absoluta en `og:image` (`index.html`); WhatsApp y LinkedIn no cargan la imagen con una ruta relativa.
+- Web publicada en https://gustavo-delnardo.vercel.app (CV y `og:image` ya la usan).
 - Dominio: no hay dominio propio. Quitar el enlace a gustavodelnardo.com del README de GitHub (fase 4).
