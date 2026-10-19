@@ -21,7 +21,7 @@ Textos del portfolio anterior que NO se han publicado porque no se pueden compro
 ## Retirados hasta confirmar
 - **Analizador IA** y **DeepLens Pro**: sin capturas ni repo, y el primero parte de un script del tutor de FCT. Confirmar si se pueden publicar.
 - Bloque "Ecosistema tecnológico" (React, TypeScript, Tailwind, Agile, Linux, Seguridad, UX), "Desarrollador en Prácticas" y "Operando en entornos de producción reales": no confirmados.
-- Formulario de contacto (Formspree `xrejqdop`): comprobar que es tuyo antes de reactivarlo.
+- Formulario de contacto (Formspree `xrejqdop`) reactivado en /contacto: Gustavo confirma que es suyo. Probar con un mensaje real tras desplegar.
 
 ## Decidido
 - Lumina se elimina del portfolio.

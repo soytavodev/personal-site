@@ -110,6 +110,19 @@ export default function HomePage() {
         </ul>
       </div>
 
+      <div className="cta-panel">
+        <div>
+          <h2>¿Construimos algo juntos?</h2>
+          <p>
+            Si tienes un proyecto, una vacante o una pregunta, escríbeme. Te
+            responderé lo antes posible.
+          </p>
+        </div>
+        <Link className="button-primary" to="/contacto">
+          Escríbeme <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+
       <div className="hero-meta">
         <span>VALENCIA, ESPAÑA</span>
         <span>ESTUDIANTE DAM · 2.º CURSO</span>
