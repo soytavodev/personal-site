@@ -1,4 +1,5 @@
 import { NavLink, Link, Route, Routes, useLocation } from 'react-router-dom'
+import LogoMark from './components/LogoMark'
 import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import PortfolioPage from './pages/PortfolioPage'
@@ -42,10 +43,10 @@ function App() {
       <aside className="sidebar">
         <Link className="brand" to="/" aria-label="Volver al inicio">
           <span className="brand-mark">
-            G<span>.</span>
+            <LogoMark />
           </span>
           <span className="brand-name">
-            GUSTAVO<span>DEV</span>
+            GUSTAVO<span>DELNARDO</span>
           </span>
         </Link>
 
@@ -80,14 +81,14 @@ function App() {
             <br />
             Valencia, España.
           </p>
-          <span className="sidebar-version">GUSTAVO.DEV · 2026</span>
+          <span className="sidebar-version">PORTFOLIO · 2026</span>
         </div>
       </aside>
 
       <main className="main-panel">
         <header className="topbar">
           <div className="breadcrumb">
-            <span>GUSTAVO.DEV</span>
+            <span>GUSTAVO DELNARDO</span>
             {breadcrumb.map((part) => (
               <span key={part} className="breadcrumb-part">
                 <span className="breadcrumb-separator">/</span>

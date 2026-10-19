@@ -47,6 +47,14 @@ export default function HomePage() {
           >
             LinkedIn <span aria-hidden="true">↗</span>
           </a>
+          <a
+            className="button-secondary"
+            href="/cv-gustavo-delnardo.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            CV (PDF) <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
 

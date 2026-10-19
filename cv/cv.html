@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>CV · Gustavo Delnardo</title>
+<meta name="author" content="Gustavo Delnardo" />
+<!--
+  Fuente del CV. Para generar el PDF:
+  abrir este archivo en Chrome → Imprimir → Guardar como PDF (A4, márgenes "Ninguno",
+  con "Gráficos de fondo" activado) y guardarlo como public/cv-gustavo-delnardo.pdf
+-->
+<style>
+  @font-face {
+    font-family: 'Inter Variable';
+    src: url('../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2');
+    font-weight: 100 900;
+  }
+  @font-face {
+    font-family: 'Inter Variable';
+    src: url('../node_modules/@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2') format('woff2');
+    font-weight: 100 900;
+    unicode-range: U+0100-024F;
+  }
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #161616;
+    --muted: #5b5b60;
+    --line: #dcdcde;
+    --accent: #b22222;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #fff; }
+  body {
+    font-family: 'Inter Variable', Inter, Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.6pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 16mm 17mm 14mm;
+    border-top: 4px solid var(--accent);
+  }
+  header { display: flex; gap: 14px; align-items: center; }
+  .logo { width: 46px; height: 46px; flex: none; }
+  h1 { margin: 0; font-size: 25pt; font-weight: 750; letter-spacing: -0.6px; line-height: 1.1; }
+  .role { margin: 3px 0 0; color: var(--muted); font-size: 10.5pt; font-weight: 500; }
+  .contact {
+    display: flex; flex-wrap: wrap; gap: 4px 18px;
+    margin: 12px 0 0; padding: 9px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    font-size: 8.8pt; color: var(--muted);
+  }
+  .contact a { color: var(--ink); text-decoration: none; }
+  .contact b { color: var(--accent); font-weight: 600; margin-right: 4px; }
+  section { display: grid; grid-template-columns: 31mm 1fr; gap: 0 14px; margin-top: 15px; }
+  h2 {
+    margin: 1px 0 0; font-size: 8pt; font-weight: 700; letter-spacing: 1.4px;
+    text-transform: uppercase; color: var(--accent);
+  }
+  p { margin: 0; }
+  .item + .item { margin-top: 9px; }
+  .item-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .item-title { font-weight: 650; }
+  .item-meta { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
+  .item-sub { color: var(--muted); font-size: 8.8pt; }
+  ul { margin: 5px 0 0; padding-left: 14px; }
+  li { margin: 2.5px 0; }
+  li::marker { color: var(--accent); }
+  dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; }
+  dt { font-weight: 600; }
+  dd { margin: 0; }
+  .projects p + p { margin-top: 4px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+      <rect width="64" height="64" fill="#0c0c0c" />
+      <path d="M19 22 L29 32 L19 42" fill="none" stroke="#e9e9eb" stroke-width="6" stroke-linecap="square" />
+      <rect x="33" y="38" width="14" height="6" fill="#ff5259" />
+    </svg>
+    <div>
+      <h1>Gustavo Delnardo</h1>
+      <p class="role">Desarrollador en formación · Desarrollo de Aplicaciones Multiplataforma</p>
+    </div>
+  </header>
+
+  <div class="contact">
+    <span><b>Ubicación</b>Valencia, España</span>
+    <span><b>Correo</b><a href="mailto:gustavoedv35@gmail.com">gustavoedv35@gmail.com</a></span>
+    <span><b>GitHub</b><a href="https://github.com/soytavodev">github.com/soytavodev</a></span>
+    <span><b>LinkedIn</b><a href="https://www.linkedin.com/in/gustavo-delnardo-2b2990397/">linkedin.com/in/gustavo-delnardo-2b2990397</a></span>
+  </div>
+
+  <section>
+    <h2>Perfil</h2>
+    <p>
+      Estudiante de 2.º de Desarrollo de Aplicaciones Multiplataforma (DAM). Trabajo a diario en
+      Linux, he desarrollado aplicaciones web desde cero con PHP, JavaScript y SQLite, y automatizo
+      tareas con Python. Me interesan el desarrollo de videojuegos, la ciberseguridad y el
+      desarrollo web.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experiencia</h2>
+    <div>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">Prácticas en empresa (FCT)</span>
+          <span class="item-meta">30 mar – 1 jun 2026</span>
+        </div>
+        <div class="item-sub">JOCARSA (José Vicente Carratalá Sanchis) · Valencia</div>
+        <ul>
+          <li>Desarrollé scripts en Python para automatizar el análisis de código fuente y la extracción de metadatos, con apoyo de IA generativa (Claude, ChatGPT, Ollama con Qwen2.5-Coder) para acelerar el desarrollo y la depuración.</li>
+          <li>Diseñé un sistema de procesamiento por lotes para la carga masiva de datos y la generación automática de imágenes con la API de Hugging Face (FLUX.1).</li>
+          <li>Implementé el backend de un catálogo web con PHP (PDO) y SQLite: consultas relacionales y persistencia de datos.</li>
+          <li>Maqueté interfaces web con HTML, CSS (Flexbox) y JavaScript, incluida una distribución radial de elementos interactivos calculada matemáticamente.</li>
+          <li>Construí un panel de administración de métricas web y una prueba de concepto para detectar anomalías de seguridad (SQLi, XSS) con few-shot prompting.</li>
+          <li>Trabajé con Git y GitHub con flujo de ramas y despliegue, bajo supervisión técnica directa.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proyectos</h2>
+    <div class="projects">
+      <p><span class="item-title">ChopCheck</span> — Aplicación web para dividir la cuenta de una mesa entre sus comensales, con interfaz móvil y panel de administración.</p>
+      <p><span class="item-title">GuessIT!</span> — Juego web con pantalla de partida y perfil de jugador.</p>
+      <p><span class="item-title">ChangeIT!</span> — Conversor de divisas que obtiene las tasas de cambio de una API externa.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Formación</h2>
+    <div>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</span>
+          <span class="item-meta">En curso · fin en 2027</span>
+        </div>
+        <div class="item-sub">CEAC FP · Valencia</div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <span class="item-title">Especialización en Marketing Digital (100 h)</span>
+          <span class="item-meta">Feb 2026</span>
+        </div>
+        <div class="item-sub">CEAC FP</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Idiomas</h2>
+    <dl>
+      <dt>Español</dt><dd>Nativo</dd>
+      <dt>Inglés</dt><dd>B2 – Intermedio alto (certificado EF SET)</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Habilidades técnicas</h2>
+    <dl>
+      <dt>Lenguajes</dt><dd>Python, PHP, JavaScript, TypeScript, SQL, HTML, CSS</dd>
+      <dt>Frameworks</dt><dd>React, Vite, Tailwind CSS</dd>
+      <dt>Bases de datos</dt><dd>MySQL, SQLite</dd>
+      <dt>Sistemas</dt><dd>Linux (entorno de desarrollo diario, Bash)</dd>
+      <dt>Herramientas</dt><dd>Git, GitHub, VS Code</dd>
+      <dt>IA para desarrollo</dt><dd>Claude, ChatGPT, Gemini, Ollama (modelos locales)</dd>
+    </dl>
+  </section>
+</main>
+</body>
+</html>

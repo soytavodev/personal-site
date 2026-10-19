@@ -9,7 +9,8 @@ export default function ContactPage() {
       <SectionHeading number="05" label="CONTACTO" title="Contacto." />
 
       <p className="section-intro">
-        Puedes escribirme por correo o encontrarme en GitHub y LinkedIn.
+        Puedes escribirme por correo, encontrarme en GitHub y LinkedIn o
+        descargar mi CV.
       </p>
 
       <div className="contact-links">
@@ -27,6 +28,10 @@ export default function ContactPage() {
         </a>
         <a href="mailto:gustavoedv35@gmail.com">
           <span>Correo electrónico</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="/cv-gustavo-delnardo.pdf" target="_blank" rel="noreferrer">
+          <span>CV (PDF)</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>

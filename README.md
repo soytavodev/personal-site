@@ -27,5 +27,7 @@ npm run preview  # sirve dist/ en local
 - `src/App.css`: sistema de diseño de la web personal (variables de color, sidebar, botones, tarjetas).
 - `src/portfolio.css`: estilos del portfolio, basados en las mismas variables.
 - `vercel.json`: reescritura necesaria para que las rutas funcionen al recargar en Vercel.
+- `cv/cv.html`: fuente del CV. Para regenerar `public/cv-gustavo-delnardo.pdf`, abrirlo en Chrome → Imprimir → Guardar como PDF (A4, márgenes «Ninguno», con gráficos de fondo).
+- `public/favicon-cursor.svg`, `favicon.ico`, `apple-touch-icon.png` y `og-image.png`: logo, iconos e imagen que se ve al compartir el enlace.
 
 El contenido de los proyectos está limitado a lo comprobable. Lo que falta por verificar está en `PENDIENTE-REVISION.md`.

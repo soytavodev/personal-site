@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function Lightbox({
   src,
@@ -9,7 +9,11 @@ export default function Lightbox({
   alt: string
   onClose: () => void
 }) {
+  const closeRef = useRef<HTMLButtonElement>(null)
+
   useEffect(() => {
+    // Lleva el foco al botón de cerrar para poder usar el teclado
+    closeRef.current?.focus()
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
     }
@@ -29,7 +33,7 @@ export default function Lightbox({
       aria-label={alt}
       onClick={onClose}
     >
-      <button type="button" className="lightbox-close" onClick={onClose}>
+      <button ref={closeRef} type="button" className="lightbox-close" onClick={onClose}>
         Cerrar ✕
       </button>
       <img src={src} alt={alt} onClick={(e) => e.stopPropagation()} />
