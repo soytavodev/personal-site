@@ -20,9 +20,8 @@ export interface Project {
   media: ProjectMedia[]
 }
 
-// Textos limitados a lo que se puede comprobar en las capturas y en lo
-// acordado. Las descripciones largas del portfolio anterior están en
-// PENDIENTE-REVISION.md hasta contrastarlas con el código de cada repo.
+// Textos comprobados con el código de cada repositorio (revisión del 20/10/2026).
+// Si cambia un proyecto, actualizar aquí solo lo que se pueda ver en su código.
 export const projects: Project[] = [
   {
     slug: 'chopcheck',
@@ -30,11 +29,12 @@ export const projects: Project[] = [
     title: 'ChopCheck',
     summary: 'Aplicación web para dividir la cuenta de una mesa entre sus comensales.',
     description: [
-      'Cada mesa tiene un código y una lista de participantes, con lo que debe pagar cada uno. En la lista de productos se indica quién ha consumido cada cosa.',
-      'El proyecto tiene una interfaz móvil para los comensales y un panel de administración.',
+      'Cada comensal entra en la mesa desde su móvil con un código, marca lo que ha consumido y genera un PIN de 4 dígitos para pagar su parte en caja. Si varias personas comparten un producto, el precio se reparte entre ellas.',
+      'El camarero tiene un panel con el plano del local: abre y cierra mesas, añade productos y valida los pagos con el PIN. El panel avisa cuando una mesa está lista para pagar.',
+      'Está hecho con PHP sin frameworks, siguiendo el patrón MVC con un único punto de entrada. Usa PDO con consultas preparadas, contraseñas cifradas con password_hash y precios en céntimos para que el reparto siempre cuadre. La parte del comensal está en español e inglés.',
     ],
     stack: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
-    links: [{ label: 'Código en GitHub', href: 'https://github.com/soytavodev/chopcheck' }],
+    links: [{ label: 'Código en GitHub', href: 'https://github.com/soytavodev/ChopCheck' }],
     media: [
       { type: 'video', src: '/projects/chopcheck.webm', alt: 'Demostración en vídeo de ChopCheck' },
       { type: 'image', src: '/projects/chopcheck-mobile.webp', alt: 'ChopCheck: vista móvil de una mesa con participantes y productos' },
@@ -45,11 +45,13 @@ export const projects: Project[] = [
     slug: 'guessit',
     number: '02',
     title: 'GuessIT!',
-    summary: 'Juego web con pantalla de partida y perfil de jugador.',
+    summary: 'Juego de preguntas de cultura general con cuentas de usuario y ranking.',
     description: [
-      'Proyecto de juego con una pantalla de partida y una pantalla de perfil.',
+      'Cada partida tiene 10 preguntas al azar con las opciones desordenadas. El progreso se guarda en la sesión, así que recargar la página no rompe la partida.',
+      'Los jugadores se registran e inician sesión (contraseñas con password_hash), tienen un perfil con sus estadísticas y compiten en un ranking de los 10 mejores, calculado con una consulta SQL con JOIN y GROUP BY.',
+      'Hecho con PHP y MySQL (PDO), sin frameworks, y con CSS escrito a mano.',
     ],
-    stack: ['PHP', 'MySQL', 'CSS'],
+    stack: ['PHP', 'MySQL', 'HTML', 'CSS'],
     links: [
       { label: 'Ver en línea', href: 'https://guessit.gamer.gd/index.php' },
       { label: 'Código en GitHub', href: 'https://github.com/soytavodev/GuessIt' },
@@ -65,10 +67,11 @@ export const projects: Project[] = [
     title: 'ChangeIT!',
     summary: 'Conversor de divisas que obtiene las tasas de cambio de una API externa.',
     description: [
-      'Conversor de divisas hecho con PHP, HTML y CSS. Consulta una API externa para obtener las tasas de cambio.',
+      'Mi primer proyecto de 1.º de DAM. Convierte euros a unas 160 monedas con las tasas de una API pública (open.er-api.com).',
+      'Valida los datos en el servidor y, si hay una base de datos configurada, guarda cada conversión en un historial de MySQL.',
     ],
-    stack: ['PHP', 'HTML', 'CSS', 'API externa'],
-    links: [],
+    stack: ['PHP', 'MySQL', 'HTML', 'CSS', 'API REST'],
+    links: [{ label: 'Código en GitHub', href: 'https://github.com/soytavodev/ChangeIt' }],
     media: [
       { type: 'image', src: '/projects/changeit-1.webp', alt: 'ChangeIT!: pantalla del conversor' },
       { type: 'image', src: '/projects/changeit-2.webp', alt: 'ChangeIT!: resultado de una conversión' },

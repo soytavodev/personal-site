@@ -1,32 +1,30 @@
-# Pendiente de revisión (fase 2)
+# Estado y pendientes
 
-Textos del portfolio anterior que NO se han publicado porque no se pueden comprobar sin el código de cada repo. Se reincorporarán solo los que se confirmen.
+## Proyectos (fase 2, revisada el 20/10/2026)
 
-## ChopCheck
-- "Aplicación B2B2C para el sector HORECA"
-- "arquitectura MVC pura", "sincronización asíncrona", "Long Polling"
-- "Control de concurrencia para evitar pagos duplicados"
-- "Hashing BCRYPT y Prepared Statements", "transacciones seguras con PDO"
-- "Dashboard con control de mesas y validación por PIN", "acceso vía QR"
-- Tecnologías mostradas (PHP, MySQL, JavaScript, HTML, CSS) y enlace al repo `soytavodev/chopcheck`: comprobar que existen y son correctos.
+Los textos de ChopCheck, GuessIT! y ChangeIT! en `src/data/projects.ts` están comprobados con el código de cada repositorio. Sus README se reescribieron con lo mismo.
 
-## GuessIT!
-- "Motor de trivia", "ranking global con SQL avanzado", "seeding dinámico de preguntas", "UI skeuomórfica"
-- Comprobar el enlace en línea (guessit.gamer.gd) y el repo `soytavodev/GuessIt`.
+Afirmaciones del portfolio antiguo que **no** se publican porque el código no las respalda:
+- ChopCheck: "B2B2C / sector HORECA", "Long Polling" (son consultas cada 2-3 s), "control de concurrencia / bloqueo optimista", "acceso vía QR", "Proyecto de Fin de Grado".
+- GuessIT!: "seeding dinámico", "UI skeuomórfica", "MVC".
+- ChangeIT!: "tiempo real" (la API se actualiza una vez al día).
 
-## ChangeIT!
-- "160+ divisas", "log transaccional seguro mediante PDO": solo hay constancia de PHP, HTML, CSS y una API externa. MySQL estaba previsto; confirmar si funciona en la versión actual.
-- No tiene enlace a repositorio.
+Pendiente:
+- Demo de GuessIT! (guessit.gamer.gd): no se pudo comprobar desde aquí. Gustavo debe confirmar que abre.
+- El historial de git de ChopCheck contiene una contraseña antigua de MySQL (`config/db_connect.php`). Si se usa en algún otro sitio, cambiarla.
+- Analizador-ids y DeepLens: solo funcionan con el servidor de IA y la base de datos de la empresa de FCT. Hacerlos independientes (base de datos de ejemplo + Ollama local) antes de añadirlos al portfolio. El tutor ha confirmado que se pueden publicar.
+- Analizador-IA: el README describe funciones (SQLite, db_manager) que el código actual no tiene. No se publica hasta corregirlo.
+- DevNova: es la landing de ChopCheck; no va como proyecto aparte.
+- Mejoras posibles de GuessIT!: mostrar la respuesta correcta tras cada pregunta, categorías y temporizador.
 
-## Retirados hasta confirmar
-- **Analizador IA** y **DeepLens Pro**: sin capturas ni repo, y el primero parte de un script del tutor de FCT. Confirmar si se pueden publicar.
-- Bloque "Ecosistema tecnológico" (React, TypeScript, Tailwind, Agile, Linux, Seguridad, UX), "Desarrollador en Prácticas" y "Operando en entornos de producción reales": no confirmados.
-- Formulario de contacto (Formspree `xrejqdop`) reactivado en /contacto: Gustavo confirma que es suyo. Probar con un mensaje real tras desplegar.
+## Web
+
+- Publicada en https://gustavo-delnardo.vercel.app (CV y `og:image` ya la usan).
+- Formulario de contacto (Formspree `xrejqdop`) activo en /contacto. Probar con un mensaje real.
+- No hay dominio propio. Quitar el enlace a gustavodelnardo.com del README de GitHub (fase 4).
+- Bloque "Ecosistema tecnológico" del portfolio antiguo y "Operando en entornos de producción reales": no se publican.
 
 ## Decidido
-- Lumina se elimina del portfolio.
-- La historia personal es cierta y vive en `/historia`. Textos reescritos con un tono más sencillo (pendiente de que Gustavo los revise).
 
-## Fases siguientes
-- Web publicada en https://gustavo-delnardo.vercel.app (CV y `og:image` ya la usan).
-- Dominio: no hay dominio propio. Quitar el enlace a gustavodelnardo.com del README de GitHub (fase 4).
+- Lumina se elimina del portfolio.
+- La historia personal es cierta y vive en `/historia`, con un tono más sencillo.
