@@ -95,4 +95,21 @@ export const projects: Project[] = [
       { type: 'image', src: '/projects/analizador-ids-tests.webp', alt: 'Analizador IDS: pruebas con unittest superadas' },
     ],
   },
+  {
+    slug: 'deeplens',
+    number: '05',
+    title: 'DeepLens',
+    summary: 'Genera capturas de las pantallas de un proyecto web a partir de su código, con IA local.',
+    description: [
+      'Lee el código de un proyecto (PHP, HTML, Python...), pide a un modelo de IA que se ejecuta en local con Ollama que deduzca sus pantallas en HTML estático, les aplica estilos con Pico.css y les saca una captura con Playwright. Así se obtiene una vista del proyecto sin montar su servidor ni su base de datos.',
+      'Nunca envía a la IA archivos que suelen tener contraseñas (db.php, .env, config/...) y limpia la respuesta del modelo, que a veces añade texto alrededor del JSON.',
+      'En mi prueba, sin tarjeta gráfica y con un modelo pequeño (qwen2.5:1.5b), cada análisis tardó entre 1 y 2 minutos. Con GuessIt generó la pantalla de perfil (la captura de abajo), pero solo detectó una pantalla de varias, y los resultados varían entre ejecuciones. Para resultados estables hace falta un modelo más grande, como el que usé en mis prácticas.',
+    ],
+    stack: ['Python', 'Ollama', 'Playwright', 'Pico.css'],
+    links: [{ label: 'Código en GitHub', href: 'https://github.com/soytavodev/DeepLens' }],
+    media: [
+      { type: 'image', src: '/projects/deeplens-guessit.webp', alt: 'DeepLens: pantalla de perfil de GuessIt generada a partir de su código' },
+      { type: 'image', src: '/projects/deeplens-terminal.webp', alt: 'DeepLens: ejecución en la terminal analizando GuessIt' },
+    ],
+  },
 ]
