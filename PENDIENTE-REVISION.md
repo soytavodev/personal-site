@@ -16,8 +16,8 @@ Pendiente:
 - El historial de git de ChopCheck contiene una contraseña antigua de MySQL. Gustavo confirma que no la usa en ningún otro sitio: no hace falta reescribir el historial.
 - Analizador-ids: independiente y en el portfolio desde el 20/10/2026. Modo por reglas probado (7/7 ataques, 0 falsos positivos, 7 tests). Modo IA probado el 20/10/2026 con Ollama y qwen2.5:1.5b en CPU: 4/7 por lotes, 1 falso positivo.
 - DeepLens: independiente (Ollama local, sin credenciales) y en el portfolio desde el 20/10/2026. Probado con qwen2.5:1.5b: funciona, pero detecta una sola pantalla y varía entre ejecuciones. Mejora posible: analizar archivo por archivo.
-- Analizador-IA: el README describe funciones (SQLite, db_manager) que el código actual no tiene. No se publica hasta corregirlo.
-- DevNova: es la landing de ChopCheck; no va como proyecto aparte.
+- Analizador-IA: arreglado y subido el 20/10/2026 (importación, Ollama local, sin secretos, README real con crédito a José Vicente Carratalá). No está en el portfolio: no se ha podido probar con IA (la prueba en la VM colgó el equipo).
+- DevNova: repositorio privado desde el 20/10/2026 (sus textos contradecían lo que hace ChopCheck).
 - Mejoras posibles de GuessIT!: mostrar la respuesta correcta tras cada pregunta, categorías y temporizador.
 
 ## Web
