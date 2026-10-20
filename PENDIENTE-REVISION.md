@@ -10,8 +10,8 @@ Afirmaciones del portfolio antiguo que **no** se publican porque el código no l
 - ChangeIT!: "tiempo real" (la API se actualiza una vez al día).
 
 Pendiente:
-- Demo de GuessIT! (guessit.gamer.gd): no se pudo comprobar desde aquí. Gustavo debe confirmar que abre.
-- El historial de git de ChopCheck contiene una contraseña antigua de MySQL (`config/db_connect.php`). Si se usa en algún otro sitio, cambiarla.
+- Demo de GuessIT!: estaba en InfinityFree y se desactivó por inactividad. Enlace retirado; volver a ponerlo si se reactiva o se aloja en otro sitio.
+- El historial de git de ChopCheck contiene una contraseña antigua de MySQL. Gustavo confirma que no la usa en ningún otro sitio: no hace falta reescribir el historial.
 - Analizador-ids y DeepLens: solo funcionan con el servidor de IA y la base de datos de la empresa de FCT. Hacerlos independientes (base de datos de ejemplo + Ollama local) antes de añadirlos al portfolio. El tutor ha confirmado que se pueden publicar.
 - Analizador-IA: el README describe funciones (SQLite, db_manager) que el código actual no tiene. No se publica hasta corregirlo.
 - DevNova: es la landing de ChopCheck; no va como proyecto aparte.
@@ -20,7 +20,7 @@ Pendiente:
 ## Web
 
 - Publicada en https://gustavo-delnardo.vercel.app (CV y `og:image` ya la usan).
-- Formulario de contacto (Formspree `xrejqdop`) activo en /contacto. Probar con un mensaje real.
+- Formulario de contacto (Formspree `xrejqdop`) activo en /contacto. Probado con un mensaje real el 20/10/2026: llega a gustavoedv35@gmail.com.
 - No hay dominio propio. Quitar el enlace a gustavodelnardo.com del README de GitHub (fase 4).
 - Bloque "Ecosistema tecnológico" del portfolio antiguo y "Operando en entornos de producción reales": no se publican.
 

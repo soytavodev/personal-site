@@ -53,7 +53,6 @@ export const projects: Project[] = [
     ],
     stack: ['PHP', 'MySQL', 'HTML', 'CSS'],
     links: [
-      { label: 'Ver en línea', href: 'https://guessit.gamer.gd/index.php' },
       { label: 'Código en GitHub', href: 'https://github.com/soytavodev/GuessIt' },
     ],
     media: [
