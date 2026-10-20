@@ -4,6 +4,8 @@
 
 Los textos de ChopCheck, GuessIT! y ChangeIT! en `src/data/projects.ts` están comprobados con el código de cada repositorio. Sus README se reescribieron con lo mismo.
 
+ChopCheck y GuessIT! se probaron de principio a fin en local con MySQL el 20/10/2026 (cada uno con su propio usuario de MySQL, configuración con permisos 600 y fuera de git). ChangeIT! se probó sin base de datos.
+
 Afirmaciones del portfolio antiguo que **no** se publican porque el código no las respalda:
 - ChopCheck: "B2B2C / sector HORECA", "Long Polling" (son consultas cada 2-3 s), "control de concurrencia / bloqueo optimista", "acceso vía QR", "Proyecto de Fin de Grado".
 - GuessIT!: "seeding dinámico", "UI skeuomórfica", "MVC".
