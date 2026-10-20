@@ -44,8 +44,8 @@
     padding: 16mm 17mm 14mm;
     border-top: 4px solid var(--accent);
   }
-  header { display: flex; gap: 14px; align-items: center; }
-  .logo { width: 46px; height: 46px; flex: none; }
+  header { display: flex; gap: 18px; align-items: center; }
+  .photo { width: 30mm; height: 30mm; flex: none; object-fit: cover; border: 1px solid var(--line); }
   h1 { margin: 0; font-size: 25pt; font-weight: 750; letter-spacing: -0.6px; line-height: 1.1; }
   .role { margin: 3px 0 0; color: var(--muted); font-size: 10.5pt; font-weight: 500; }
   .contact {
@@ -78,11 +78,7 @@
 <body>
 <main class="page">
   <header>
-    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
-      <rect width="64" height="64" fill="#0c0c0c" />
-      <path d="M19 22 L29 32 L19 42" fill="none" stroke="#e9e9eb" stroke-width="6" stroke-linecap="square" />
-      <rect x="33" y="38" width="14" height="6" fill="#ff5259" />
-    </svg>
+    <img class="photo" src="foto-cv.jpg" alt="Gustavo Delnardo" />
     <div>
       <h1>Gustavo Delnardo</h1>
       <p class="role">Desarrollador en formación · Desarrollo de Aplicaciones Multiplataforma</p>
@@ -132,7 +128,7 @@
     <h2>Proyectos</h2>
     <div class="projects">
       <p><span class="item-title">ChopCheck</span> — Aplicación web para dividir la cuenta de una mesa entre sus comensales, con interfaz móvil y panel de administración.</p>
-      <p><span class="item-title">GuessIT!</span> — Juego web con pantalla de partida y perfil de jugador.</p>
+      <p><span class="item-title">GuessIT!</span> — Juego de preguntas de cultura general con cuentas de usuario y ranking.</p>
       <p><span class="item-title">ChangeIT!</span> — Conversor de divisas que obtiene las tasas de cambio de una API externa.</p>
     </div>
   </section>

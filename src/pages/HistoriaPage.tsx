@@ -83,10 +83,10 @@ export default function HistoriaPage() {
             de trabajo.
           </p>
         </div>
-        <figure className="story-photo wide">
+        <figure className="story-photo tall">
           <img
             src="/historia/perfil.webp"
-            alt="Gustavo frente a un monitor con código"
+            alt="Gustavo programando en su portátil"
             loading="lazy"
             decoding="async"
           />
