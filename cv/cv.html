@@ -33,7 +33,7 @@
   body {
     font-family: 'Inter Variable', Inter, Arial, sans-serif;
     color: var(--ink);
-    font-size: 9.6pt;
+    font-size: 9.3pt;
     line-height: 1.45;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -41,11 +41,11 @@
   .page {
     width: 210mm;
     min-height: 297mm;
-    padding: 16mm 17mm 14mm;
+    padding: 12mm 16mm 10mm;
     border-top: 4px solid var(--accent);
   }
   header { display: flex; gap: 18px; align-items: center; }
-  .photo { width: 30mm; height: 30mm; flex: none; object-fit: cover; border: 1px solid var(--line); }
+  .photo { width: 26mm; height: 26mm; flex: none; object-fit: cover; border: 1px solid var(--line); }
   h1 { margin: 0; font-size: 25pt; font-weight: 750; letter-spacing: -0.6px; line-height: 1.1; }
   .role { margin: 3px 0 0; color: var(--muted); font-size: 10.5pt; font-weight: 500; }
   .contact {
@@ -55,7 +55,7 @@
   }
   .contact a { color: var(--ink); text-decoration: none; }
   .contact b { color: var(--accent); font-weight: 600; margin-right: 4px; }
-  section { display: grid; grid-template-columns: 31mm 1fr; gap: 0 14px; margin-top: 15px; }
+  section { display: grid; grid-template-columns: 31mm 1fr; gap: 0 14px; margin-top: 11px; }
   h2 {
     margin: 1px 0 0; font-size: 8pt; font-weight: 700; letter-spacing: 1.4px;
     text-transform: uppercase; color: var(--accent);
@@ -67,12 +67,14 @@
   .item-meta { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
   .item-sub { color: var(--muted); font-size: 8.8pt; }
   ul { margin: 5px 0 0; padding-left: 14px; }
-  li { margin: 2.5px 0; }
+  li { margin: 1.5px 0; }
   li::marker { color: var(--accent); }
   dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; }
   dt { font-weight: 600; }
   dd { margin: 0; }
-  .projects p + p { margin-top: 4px; }
+  .projects p + p { margin-top: 3px; }
+  .tech { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
+  .more { color: var(--muted); font-size: 8.6pt; }
 </style>
 </head>
 <body>
@@ -97,9 +99,9 @@
     <h2>Perfil</h2>
     <p>
       Estudiante de 2.º de Desarrollo de Aplicaciones Multiplataforma (DAM). Trabajo a diario en
-      Linux, he desarrollado aplicaciones web desde cero con PHP, JavaScript y SQLite, y automatizo
-      tareas con Python. Me interesan el desarrollo de videojuegos, la ciberseguridad y el
-      desarrollo web.
+      Linux, he desarrollado aplicaciones web desde cero con PHP, JavaScript y SQLite, automatizo
+      tareas con Python y he integrado modelos de IA en local con Ollama. Me interesan el
+      desarrollo de videojuegos, la ciberseguridad y el desarrollo web.
     </p>
   </section>
 
@@ -127,9 +129,12 @@
   <section>
     <h2>Proyectos</h2>
     <div class="projects">
-      <p><span class="item-title">ChopCheck</span> — Aplicación web para dividir la cuenta de una mesa entre sus comensales, con interfaz móvil y panel de administración.</p>
-      <p><span class="item-title">GuessIT!</span> — Juego de preguntas de cultura general con cuentas de usuario y ranking.</p>
-      <p><span class="item-title">ChangeIT!</span> — Conversor de divisas que obtiene las tasas de cambio de una API externa.</p>
+      <p><span class="item-title">Analizador IDS</span> — Detector de intrusos para logs web: reglas por firmas e IA local con Ollama, con comparación de los dos y pruebas con unittest. <span class="tech">Python, SQLite</span></p>
+      <p><span class="item-title">DeepLens</span> — Genera capturas de las pantallas de un proyecto web a partir de su código, con IA local y un navegador automatizado. <span class="tech">Python, Ollama, Playwright</span></p>
+      <p><span class="item-title">ChopCheck</span> — Aplicación para dividir la cuenta de una mesa entre los comensales, con panel para el camarero. <span class="tech">PHP (MVC sin frameworks), MySQL, JavaScript</span></p>
+      <p><span class="item-title">GuessIT!</span> — Juego de preguntas con cuentas de usuario y ranking. <span class="tech">PHP, MySQL</span></p>
+      <p><span class="item-title">ChangeIT!</span> — Conversor de divisas con una API pública. <span class="tech">PHP, API REST</span></p>
+      <p class="more">Código y capturas: gustavo-delnardo.vercel.app/portfolio</p>
     </div>
   </section>
 
@@ -168,7 +173,7 @@
       <dt>Frameworks</dt><dd>React, Vite, Tailwind CSS</dd>
       <dt>Bases de datos</dt><dd>MySQL, SQLite</dd>
       <dt>Sistemas</dt><dd>Linux (entorno de desarrollo diario, Bash)</dd>
-      <dt>Herramientas</dt><dd>Git, GitHub, VS Code</dd>
+      <dt>Herramientas</dt><dd>Git, GitHub, VS Code, Playwright</dd>
       <dt>IA para desarrollo</dt><dd>Claude, ChatGPT, Gemini, Ollama (modelos locales)</dd>
     </dl>
   </section>
