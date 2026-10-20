@@ -14,7 +14,8 @@ Afirmaciones del portfolio antiguo que **no** se publican porque el código no l
 Pendiente:
 - Demo de GuessIT!: estaba en InfinityFree y se desactivó por inactividad. Enlace retirado; volver a ponerlo si se reactiva o se aloja en otro sitio.
 - El historial de git de ChopCheck contiene una contraseña antigua de MySQL. Gustavo confirma que no la usa en ningún otro sitio: no hace falta reescribir el historial.
-- Analizador-ids y DeepLens: solo funcionan con el servidor de IA y la base de datos de la empresa de FCT. Hacerlos independientes (base de datos de ejemplo + Ollama local) antes de añadirlos al portfolio. El tutor ha confirmado que se pueden publicar.
+- Analizador-ids: independiente y en el portfolio desde el 20/10/2026. Modo por reglas probado (7/7 ataques, 0 falsos positivos, 7 tests). Modo IA pendiente de probar con Ollama local (Gustavo tiene que instalarlo).
+- DeepLens: sigue dependiendo del servidor de IA de la empresa y tiene las credenciales escritas en el código. Hacerlo independiente antes de añadirlo al portfolio.
 - Analizador-IA: el README describe funciones (SQLite, db_manager) que el código actual no tiene. No se publica hasta corregirlo.
 - DevNova: es la landing de ChopCheck; no va como proyecto aparte.
 - Mejoras posibles de GuessIT!: mostrar la respuesta correcta tras cada pregunta, categorías y temporizador.

@@ -76,4 +76,21 @@ export const projects: Project[] = [
       { type: 'image', src: '/projects/changeit-2.webp', alt: 'ChangeIT!: resultado de una conversión' },
     ],
   },
+  {
+    slug: 'analizador-ids',
+    number: '04',
+    title: 'Analizador IDS',
+    summary: 'Prototipo de detector de intrusos que revisa los accesos a una web y busca ataques.',
+    description: [
+      'Lee los últimos accesos guardados en una base de datos SQLite y detecta intentos de SQL Injection, XSS, Path Traversal y escaneos de bots. Un segundo script simula al atacante escribiendo peticiones maliciosas en la base de datos.',
+      'Tiene dos modos: uno por reglas, que busca patrones conocidos (decodificando antes la URL, porque los atacantes la codifican para esquivar filtros), y otro con IA local mediante Ollama, que recibe ejemplos de tráfico normal y de ataques dentro del prompt y devuelve un informe en JSON. Con los dos a la vez se compara qué detecta cada uno.',
+      'Empezó como un prototipo en mis prácticas en empresa. Lo adapté para que funcione solo, con una base de datos de ejemplo, y añadí pruebas con unittest.',
+    ],
+    stack: ['Python', 'SQLite', 'Ollama', 'Regex', 'unittest'],
+    links: [{ label: 'Código en GitHub', href: 'https://github.com/soytavodev/Analizador-ids' }],
+    media: [
+      { type: 'image', src: '/projects/analizador-ids-reglas.webp', alt: 'Analizador IDS: informe del análisis por reglas en la terminal' },
+      { type: 'image', src: '/projects/analizador-ids-tests.webp', alt: 'Analizador IDS: pruebas con unittest superadas' },
+    ],
+  },
 ]
