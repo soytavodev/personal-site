@@ -84,12 +84,14 @@ export const projects: Project[] = [
     description: [
       'Lee los últimos accesos guardados en una base de datos SQLite y detecta intentos de SQL Injection, XSS, Path Traversal y escaneos de bots. Un segundo script simula al atacante escribiendo peticiones maliciosas en la base de datos.',
       'Tiene dos modos: uno por reglas, que busca patrones conocidos (decodificando antes la URL, porque los atacantes la codifican para esquivar filtros), y otro con IA local mediante Ollama, que recibe ejemplos de tráfico normal y de ataques dentro del prompt y devuelve un informe en JSON. Con los dos a la vez se compara qué detecta cada uno.',
+      'En mi prueba, sin tarjeta gráfica y con un modelo pequeño (qwen2.5:1.5b), las reglas detectaron los 7 ataques. La IA no detectó ninguno cuando recibía todos los registros a la vez; al mandárselos en lotes de 8 acertó 4 (las inyecciones SQL, el XSS y el path traversal) con un falso positivo, pero no vio los escaneos de bots. Además, el programa descarta los registros que la IA se inventa.',
       'Empezó como un prototipo en mis prácticas en empresa. Lo adapté para que funcione solo, con una base de datos de ejemplo, y añadí pruebas con unittest.',
     ],
     stack: ['Python', 'SQLite', 'Ollama', 'Regex', 'unittest'],
     links: [{ label: 'Código en GitHub', href: 'https://github.com/soytavodev/Analizador-ids' }],
     media: [
       { type: 'image', src: '/projects/analizador-ids-reglas.webp', alt: 'Analizador IDS: informe del análisis por reglas en la terminal' },
+      { type: 'image', src: '/projects/analizador-ids-ia.webp', alt: 'Analizador IDS: informe de la IA local y comparación con las reglas' },
       { type: 'image', src: '/projects/analizador-ids-tests.webp', alt: 'Analizador IDS: pruebas con unittest superadas' },
     ],
   },
