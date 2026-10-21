@@ -23,159 +23,246 @@
   }
   @page { size: A4; margin: 0; }
   :root {
-    --ink: #161616;
-    --muted: #5b5b60;
-    --line: #dcdcde;
-    --accent: #b22222;
+    --ink: #17171a;
+    --muted: #5d5d63;
+    --line: #e2e2e5;
+    --accent: #c1272d;
+    --side-bg: #141416;
+    --side-ink: #ececee;
+    --side-muted: #9d9da4;
+    --side-line: #2c2c31;
+    --side-accent: #ff5259;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: #fff; }
   body {
     font-family: 'Inter Variable', Inter, Arial, sans-serif;
     color: var(--ink);
-    font-size: 9.3pt;
-    line-height: 1.45;
+    font-size: 8.9pt;
+    line-height: 1.38;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  .page {
-    width: 210mm;
-    min-height: 297mm;
-    padding: 12mm 16mm 10mm;
-    border-top: 4px solid var(--accent);
-  }
-  header { display: flex; gap: 18px; align-items: center; }
-  .photo { width: 26mm; height: 26mm; flex: none; object-fit: cover; border: 1px solid var(--line); }
-  h1 { margin: 0; font-size: 25pt; font-weight: 750; letter-spacing: -0.6px; line-height: 1.1; }
-  .role { margin: 3px 0 0; color: var(--muted); font-size: 10.5pt; font-weight: 500; }
-  .contact {
-    display: flex; flex-wrap: wrap; gap: 4px 18px;
-    margin: 12px 0 0; padding: 9px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-    font-size: 8.8pt; color: var(--muted);
-  }
-  .contact a { color: var(--ink); text-decoration: none; }
-  .contact b { color: var(--accent); font-weight: 600; margin-right: 4px; }
-  section { display: grid; grid-template-columns: 31mm 1fr; gap: 0 14px; margin-top: 11px; }
-  h2 {
-    margin: 1px 0 0; font-size: 8pt; font-weight: 700; letter-spacing: 1.4px;
-    text-transform: uppercase; color: var(--accent);
-  }
+  a { color: inherit; text-decoration: none; }
   p { margin: 0; }
-  .item + .item { margin-top: 9px; }
-  .item-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
-  .item-title { font-weight: 650; }
-  .item-meta { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
-  .item-sub { color: var(--muted); font-size: 8.8pt; }
-  ul { margin: 5px 0 0; padding-left: 14px; }
-  li { margin: 1.5px 0; }
+
+  .page {
+    display: grid;
+    grid-template-columns: 64mm 1fr;
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+  }
+
+  /* Columna lateral */
+  .side {
+    background: var(--side-bg);
+    color: var(--side-ink);
+    padding: 12mm 7mm 10mm 8mm;
+    border-top: 4px solid var(--side-accent);
+  }
+  .photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-bottom: 3px solid var(--side-accent);
+  }
+  .side h2 {
+    margin: 15px 0 7px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--side-line);
+    color: var(--side-accent);
+    font-size: 7.4pt;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  .contact { display: grid; gap: 6px; font-size: 8.1pt; }
+  .contact span { display: block; color: var(--side-muted); font-size: 6.9pt; letter-spacing: 0.3px; text-transform: uppercase; }
+  .contact a, .contact div { color: var(--side-ink); overflow-wrap: anywhere; }
+  .contact .nowrap { white-space: nowrap; font-size: 6.9pt; letter-spacing: -0.1px; }
+  .skill-group + .skill-group { margin-top: 7px; }
+  .skill-group h3 { margin: 0 0 4px; color: var(--side-muted); font-size: 7.2pt; font-weight: 600; }
+  .tags { display: flex; flex-wrap: wrap; gap: 3px; }
+  .tag {
+    padding: 1.5px 5px;
+    border: 1px solid var(--side-line);
+    background: #1d1d20;
+    color: var(--side-ink);
+    font-size: 7.6pt;
+  }
+  .langs { display: grid; gap: 4px; font-size: 8.2pt; }
+  .langs div { display: flex; justify-content: space-between; gap: 6px; }
+  .langs span { color: var(--side-muted); text-align: right; }
+  .interests { color: var(--side-ink); font-size: 8.2pt; }
+
+  /* Columna principal */
+  .main { padding: 10mm 11mm 8mm 9mm; border-top: 4px solid var(--accent); }
+  h1 { margin: 0; font-size: 25pt; font-weight: 760; letter-spacing: -0.7px; line-height: 1.05; }
+  .role { margin: 5px 0 0; color: var(--accent); font-size: 10.3pt; font-weight: 600; }
+  .summary { margin-top: 7px; color: #2c2c30; }
+  .main h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 11px 0 6px;
+    color: var(--ink);
+    font-size: 8.3pt;
+    font-weight: 750;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  .main h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .main h2::before { content: ""; width: 10px; height: 3px; background: var(--accent); }
+
+  .job-head, .project-head, .edu-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+  }
+  .title { font-weight: 680; }
+  .meta { color: var(--muted); font-size: 8pt; white-space: nowrap; }
+  .sub { color: var(--muted); font-size: 8.3pt; }
+  ul { margin: 4px 0 0; padding-left: 13px; }
+  li { margin: 1.4px 0; }
   li::marker { color: var(--accent); }
-  dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; }
-  dt { font-weight: 600; }
-  dd { margin: 0; }
-  .projects p + p { margin-top: 3px; }
-  .tech { color: var(--muted); font-size: 8.6pt; white-space: nowrap; }
-  .more { color: var(--muted); font-size: 8.6pt; }
+
+  .projects { display: grid; gap: 5px; }
+  .project { padding: 5px 8px 5px 9px; border: 1px solid var(--line); border-left: 3px solid var(--accent); }
+  .project p { margin-top: 2px; color: #2c2c30; }
+  .project-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 3px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 3px; }
+  .chip { padding: 0.5px 5px; background: #f2f2f4; color: #3a3a40; font-size: 7.4pt; }
+  .link { color: var(--accent); font-size: 7.6pt; white-space: nowrap; }
+
+  .edu + .edu { margin-top: 6px; }
 </style>
 </head>
 <body>
 <main class="page">
-  <header>
+  <aside class="side">
     <img class="photo" src="foto-cv.jpg" alt="Gustavo Delnardo" />
-    <div>
-      <h1>Gustavo Delnardo</h1>
-      <p class="role">Desarrollador en formación · Desarrollo de Aplicaciones Multiplataforma</p>
+
+    <h2>Contacto</h2>
+    <div class="contact">
+      <div><span>Ubicación</span>Valencia, España</div>
+      <div><span>Correo</span><a href="mailto:gustavoedv35@gmail.com">gustavoedv35@gmail.com</a></div>
+      <div><span>Web y portfolio</span><a href="https://gustavo-delnardo.vercel.app">gustavo-delnardo.vercel.app</a></div>
+      <div><span>GitHub</span><a href="https://github.com/soytavodev">github.com/soytavodev</a></div>
+      <div><span>LinkedIn</span><a class="nowrap" href="https://www.linkedin.com/in/gustavo-delnardo-2b2990397/">linkedin.com/in/gustavo-delnardo-2b2990397</a></div>
     </div>
-  </header>
 
-  <div class="contact">
-    <span><b>Ubicación</b>Valencia, España</span>
-    <span><b>Web</b><a href="https://gustavo-delnardo.vercel.app">gustavo-delnardo.vercel.app</a></span>
-    <span><b>Correo</b><a href="mailto:gustavoedv35@gmail.com">gustavoedv35@gmail.com</a></span>
-    <span><b>GitHub</b><a href="https://github.com/soytavodev">github.com/soytavodev</a></span>
-    <span><b>LinkedIn</b><a href="https://www.linkedin.com/in/gustavo-delnardo-2b2990397/">linkedin.com/in/gustavo-delnardo-2b2990397</a></span>
-  </div>
+    <h2>Habilidades</h2>
+    <div class="skill-group">
+      <h3>Lenguajes</h3>
+      <div class="tags"><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Frameworks</h3>
+      <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Bases de datos</h3>
+      <div class="tags"><span class="tag">MySQL</span><span class="tag">SQLite</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Herramientas</h3>
+      <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Linux</span><span class="tag">Bash</span><span class="tag">VS Code</span><span class="tag">Playwright</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>IA para desarrollo</h3>
+      <div class="tags"><span class="tag">Ollama (local)</span><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Gemini</span></div>
+    </div>
 
-  <section>
-    <h2>Perfil</h2>
-    <p>
-      Estudiante de 2.º de Desarrollo de Aplicaciones Multiplataforma (DAM). Trabajo a diario en
-      Linux, he desarrollado aplicaciones web desde cero con PHP, JavaScript y SQLite, automatizo
-      tareas con Python y he integrado modelos de IA en local con Ollama. Me interesan el
-      desarrollo de videojuegos, la ciberseguridad y el desarrollo web.
+    <h2>Idiomas</h2>
+    <div class="langs">
+      <div>Español <span>Nativo</span></div>
+      <div>Inglés <span>B2 (EF SET)</span></div>
+    </div>
+
+    <h2>Intereses</h2>
+    <p class="interests">Desarrollo de videojuegos · Ciberseguridad · Desarrollo web</p>
+  </aside>
+
+  <section class="main">
+    <h1>Gustavo Delnardo</h1>
+    <p class="role">Desarrollador en formación · Desarrollo de Aplicaciones Multiplataforma</p>
+    <p class="summary">
+      Estudiante de 2.º de DAM. Trabajo a diario en Linux, he desarrollado aplicaciones web desde
+      cero con PHP, JavaScript y SQLite, automatizo tareas con Python y he integrado modelos de IA
+      en local con Ollama. Me gusta entender cómo funciona lo que programo y probarlo antes de darlo
+      por terminado.
     </p>
-  </section>
 
-  <section>
     <h2>Experiencia</h2>
-    <div>
-      <div class="item">
-        <div class="item-head">
-          <span class="item-title">Prácticas en empresa (FCT)</span>
-          <span class="item-meta">30 mar – 1 jun 2026</span>
-        </div>
-        <div class="item-sub">JOCARSA (José Vicente Carratalá Sanchis) · Valencia</div>
-        <ul>
-          <li>Desarrollé scripts en Python para automatizar el análisis de código fuente y la extracción de metadatos, con apoyo de IA generativa (Claude, ChatGPT, Ollama con Qwen2.5-Coder) para acelerar el desarrollo y la depuración.</li>
-          <li>Diseñé un sistema de procesamiento por lotes para la carga masiva de datos y la generación automática de imágenes con la API de Hugging Face (FLUX.1).</li>
-          <li>Implementé el backend de un catálogo web con PHP (PDO) y SQLite: consultas relacionales y persistencia de datos.</li>
-          <li>Maqueté interfaces web con HTML, CSS (Flexbox) y JavaScript, incluida una distribución radial de elementos interactivos calculada matemáticamente.</li>
-          <li>Construí un panel de administración de métricas web y una prueba de concepto para detectar anomalías de seguridad (SQLi, XSS) con few-shot prompting.</li>
-          <li>Trabajé con Git y GitHub con flujo de ramas y despliegue, bajo supervisión técnica directa.</li>
-        </ul>
+    <div class="job">
+      <div class="job-head">
+        <span class="title">Prácticas en empresa (FCT)</span>
+        <span class="meta">30 mar – 1 jun 2026</span>
       </div>
+      <div class="sub">JOCARSA (José Vicente Carratalá Sanchis) · Valencia</div>
+      <ul>
+        <li>Desarrollé scripts en Python para automatizar el análisis de código fuente y la extracción de metadatos, con apoyo de IA generativa (Claude, ChatGPT, Ollama con Qwen2.5-Coder).</li>
+        <li>Diseñé un sistema de procesamiento por lotes para la carga masiva de datos y la generación automática de imágenes con la API de Hugging Face (FLUX.1).</li>
+        <li>Implementé el backend de un catálogo web con PHP (PDO) y SQLite: consultas relacionales y persistencia de datos.</li>
+        <li>Maqueté interfaces con HTML, CSS (Flexbox) y JavaScript, incluida una distribución radial de elementos interactivos calculada matemáticamente.</li>
+        <li>Construí un panel de métricas web y una prueba de concepto para detectar ataques (SQLi, XSS) con few-shot prompting.</li>
+        <li>Trabajé con Git y GitHub con flujo de ramas y despliegue, bajo supervisión técnica directa.</li>
+      </ul>
     </div>
-  </section>
 
-  <section>
     <h2>Proyectos</h2>
     <div class="projects">
-      <p><span class="item-title">Analizador IDS</span> — Detector de intrusos para logs web: reglas por firmas e IA local con Ollama, con comparación de los dos y pruebas con unittest. <span class="tech">Python, SQLite</span></p>
-      <p><span class="item-title">DeepLens</span> — Genera capturas de las pantallas de un proyecto web a partir de su código, con IA local y un navegador automatizado. <span class="tech">Python, Ollama, Playwright</span></p>
-      <p><span class="item-title">ChopCheck</span> — Aplicación para dividir la cuenta de una mesa entre los comensales, con panel para el camarero. <span class="tech">PHP (MVC sin frameworks), MySQL, JavaScript</span></p>
-      <p><span class="item-title">GuessIT!</span> — Juego de preguntas con cuentas de usuario y ranking. <span class="tech">PHP, MySQL</span></p>
-      <p><span class="item-title">ChangeIT!</span> — Conversor de divisas con una API pública. <span class="tech">PHP, API REST</span></p>
-      <p class="more">Código y capturas: gustavo-delnardo.vercel.app/portfolio</p>
+      <article class="project">
+        <div class="project-head"><span class="title">Analizador IDS</span><span class="meta">2026 · origen en la FCT</span></div>
+        <p>Detector de intrusos para logs web con dos modos: reglas por firmas e IA local. En mis pruebas, las reglas detectaron 7 de 7 ataques y la IA, enviando los registros por lotes, 4 de 7.</p>
+        <div class="project-foot">
+          <div class="chips"><span class="chip">Python</span><span class="chip">SQLite</span><span class="chip">Ollama</span><span class="chip">unittest</span></div>
+          <a class="link" href="https://github.com/soytavodev/Analizador-ids">github.com/soytavodev/Analizador-ids</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-head"><span class="title">DeepLens</span><span class="meta">2026 · origen en la FCT</span></div>
+        <p>Genera capturas de las pantallas de un proyecto web a partir de su código, con IA local y un navegador automatizado. Nunca envía a la IA archivos con contraseñas.</p>
+        <div class="project-foot">
+          <div class="chips"><span class="chip">Python</span><span class="chip">Ollama</span><span class="chip">Playwright</span></div>
+          <a class="link" href="https://github.com/soytavodev/DeepLens">github.com/soytavodev/DeepLens</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-head"><span class="title">ChopCheck</span><span class="meta">2026 · 1.º DAM</span></div>
+        <p>Aplicación para dividir la cuenta de una mesa: cada comensal marca lo que consumió y paga con un PIN; el camarero valida desde su panel. MVC sin frameworks y reparto exacto en céntimos.</p>
+        <div class="project-foot">
+          <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">PDO</span></div>
+          <a class="link" href="https://github.com/soytavodev/ChopCheck">github.com/soytavodev/ChopCheck</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-head"><span class="title">GuessIT!</span><span class="meta">2026 · 1.º DAM</span></div>
+        <p>Juego de preguntas con registro de usuarios, estadísticas y un ranking calculado con SQL (JOIN y GROUP BY).</p>
+        <div class="project-foot">
+          <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">CSS</span></div>
+          <a class="link" href="https://github.com/soytavodev/GuessIt">github.com/soytavodev/GuessIt</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-head"><span class="title">ChangeIT!</span><span class="meta">2026 · 1.º DAM</span></div>
+        <p>Conversor de euros a unas 160 monedas con una API pública y un historial opcional en MySQL.</p>
+        <div class="project-foot">
+          <div class="chips"><span class="chip">PHP</span><span class="chip">API REST</span><span class="chip">MySQL</span></div>
+          <a class="link" href="https://github.com/soytavodev/ChangeIt">github.com/soytavodev/ChangeIt</a>
+        </div>
+      </article>
     </div>
-  </section>
 
-  <section>
     <h2>Formación</h2>
-    <div>
-      <div class="item">
-        <div class="item-head">
-          <span class="item-title">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</span>
-          <span class="item-meta">En curso · fin en 2027</span>
-        </div>
-        <div class="item-sub">CEAC FP · Valencia</div>
-      </div>
-      <div class="item">
-        <div class="item-head">
-          <span class="item-title">Especialización en Marketing Digital (100 h)</span>
-          <span class="item-meta">Feb 2026</span>
-        </div>
-        <div class="item-sub">CEAC FP</div>
-      </div>
+    <div class="edu">
+      <div class="edu-head"><span class="title">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</span><span class="meta">En curso · fin en 2027</span></div>
+      <div class="sub">CEAC FP · Valencia</div>
     </div>
-  </section>
-
-  <section>
-    <h2>Idiomas</h2>
-    <dl>
-      <dt>Español</dt><dd>Nativo</dd>
-      <dt>Inglés</dt><dd>B2 – Intermedio alto (certificado EF SET)</dd>
-    </dl>
-  </section>
-
-  <section>
-    <h2>Habilidades técnicas</h2>
-    <dl>
-      <dt>Lenguajes</dt><dd>Python, PHP, JavaScript, TypeScript, SQL, HTML, CSS</dd>
-      <dt>Frameworks</dt><dd>React, Vite, Tailwind CSS</dd>
-      <dt>Bases de datos</dt><dd>MySQL, SQLite</dd>
-      <dt>Sistemas</dt><dd>Linux (entorno de desarrollo diario, Bash)</dd>
-      <dt>Herramientas</dt><dd>Git, GitHub, VS Code, Playwright</dd>
-      <dt>IA para desarrollo</dt><dd>Claude, ChatGPT, Gemini, Ollama (modelos locales)</dd>
-    </dl>
+    <div class="edu">
+      <div class="edu-head"><span class="title">Especialización en Marketing Digital (100 h)</span><span class="meta">Feb 2026</span></div>
+      <div class="sub">CEAC FP</div>
+    </div>
   </section>
 </main>
 </body>
