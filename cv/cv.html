@@ -98,7 +98,7 @@
   .interests { color: var(--side-ink); font-size: 8.2pt; }
 
   /* Columna principal */
-  .main { padding: 10mm 11mm 8mm 9mm; border-top: 4px solid var(--accent); }
+  .main { padding: 9mm 11mm 8mm 9mm; border-top: 4px solid var(--accent); }
   h1 { margin: 0; font-size: 25pt; font-weight: 760; letter-spacing: -0.7px; line-height: 1.05; }
   .role { margin: 5px 0 0; color: var(--accent); font-size: 10.3pt; font-weight: 600; }
   .summary { margin-top: 7px; color: #2c2c30; }
@@ -134,7 +134,11 @@
   .chip { padding: 0.5px 5px; background: #f2f2f4; color: #3a3a40; font-size: 7.4pt; }
   .link { color: var(--accent); font-size: 7.6pt; white-space: nowrap; }
 
-  .edu + .edu { margin-top: 6px; }
+  .other { display: grid; gap: 3px; font-size: 8.5pt; }
+  .other .sub { color: #3a3a40; }
+  .side-edu + .side-edu { margin-top: 6px; }
+  .side-edu-title { font-size: 8.2pt; font-weight: 600; line-height: 1.3; }
+  .side-edu-meta { margin-top: 1px; color: var(--side-muted); font-size: 7.6pt; }
 </style>
 </head>
 <body>
@@ -171,6 +175,16 @@
     <div class="skill-group">
       <h3>IA para desarrollo</h3>
       <div class="tags"><span class="tag">Ollama (local)</span><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Gemini</span></div>
+    </div>
+
+    <h2>Formación</h2>
+    <div class="side-edu">
+      <div class="side-edu-title">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</div>
+      <div class="side-edu-meta">CEAC FP · Valencia · en curso, fin en 2027</div>
+    </div>
+    <div class="side-edu">
+      <div class="side-edu-title">Especialización en Marketing Digital (100 h)</div>
+      <div class="side-edu-meta">CEAC FP · feb 2026</div>
     </div>
 
     <h2>Idiomas</h2>
@@ -214,7 +228,7 @@
     <div class="projects">
       <article class="project">
         <div class="project-head"><span class="title">Analizador IDS</span><span class="meta">2026 · origen en la FCT</span></div>
-        <p>Detector de intrusos para logs web con dos modos: reglas por firmas e IA local. En mis pruebas, las reglas detectaron 7 de 7 ataques y la IA, enviando los registros por lotes, 4 de 7.</p>
+        <p>Detector de intrusos para logs web: reglas por firmas e IA local. En mis pruebas, las reglas detectaron 7 de 7 ataques y la IA, por lotes, 4 de 7.</p>
         <div class="project-foot">
           <div class="chips"><span class="chip">Python</span><span class="chip">SQLite</span><span class="chip">Ollama</span><span class="chip">unittest</span></div>
           <a class="link" href="https://github.com/soytavodev/Analizador-ids">github.com/soytavodev/Analizador-ids</a>
@@ -222,7 +236,7 @@
       </article>
       <article class="project">
         <div class="project-head"><span class="title">DeepLens</span><span class="meta">2026 · origen en la FCT</span></div>
-        <p>Genera capturas de las pantallas de un proyecto web a partir de su código, con IA local y un navegador automatizado. Nunca envía a la IA archivos con contraseñas.</p>
+        <p>Genera capturas de las pantallas de un proyecto web a partir de su código, con IA local y un navegador automatizado.</p>
         <div class="project-foot">
           <div class="chips"><span class="chip">Python</span><span class="chip">Ollama</span><span class="chip">Playwright</span></div>
           <a class="link" href="https://github.com/soytavodev/DeepLens">github.com/soytavodev/DeepLens</a>
@@ -230,7 +244,7 @@
       </article>
       <article class="project">
         <div class="project-head"><span class="title">ChopCheck</span><span class="meta">2026 · 1.º DAM</span></div>
-        <p>Aplicación para dividir la cuenta de una mesa: cada comensal marca lo que consumió y paga con un PIN; el camarero valida desde su panel. MVC sin frameworks y reparto exacto en céntimos.</p>
+        <p>Divide la cuenta de una mesa: cada comensal marca lo que consumió y paga con un PIN que valida el camarero. MVC sin frameworks y reparto exacto al céntimo.</p>
         <div class="project-foot">
           <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">PDO</span></div>
           <a class="link" href="https://github.com/soytavodev/ChopCheck">github.com/soytavodev/ChopCheck</a>
@@ -246,7 +260,7 @@
       </article>
       <article class="project">
         <div class="project-head"><span class="title">ChangeIT!</span><span class="meta">2026 · 1.º DAM</span></div>
-        <p>Conversor de euros a unas 160 monedas con una API pública y un historial opcional en MySQL.</p>
+        <p>Conversor de euros a unas 160 monedas con una API pública.</p>
         <div class="project-foot">
           <div class="chips"><span class="chip">PHP</span><span class="chip">API REST</span><span class="chip">MySQL</span></div>
           <a class="link" href="https://github.com/soytavodev/ChangeIt">github.com/soytavodev/ChangeIt</a>
@@ -254,14 +268,15 @@
       </article>
     </div>
 
-    <h2>Formación</h2>
-    <div class="edu">
-      <div class="edu-head"><span class="title">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</span><span class="meta">En curso · fin en 2027</span></div>
-      <div class="sub">CEAC FP · Valencia</div>
-    </div>
-    <div class="edu">
-      <div class="edu-head"><span class="title">Especialización en Marketing Digital (100 h)</span><span class="meta">Feb 2026</span></div>
-      <div class="sub">CEAC FP</div>
+    <h2>Otra experiencia</h2>
+    <div class="other">
+      <div class="job-head"><span><span class="title">Ayudante de cocina y camarero</span> <span class="sub">· D'Leite, Valencia</span></span><span class="meta">oct 2025 – actualidad</span></div>
+      <div class="job-head"><span><span class="title">Camarero de sala y barra</span> <span class="sub">· Hotel Eurotel Providencia, Chile</span></span><span class="meta">dic 2023 – may 2025</span></div>
+      <div class="job-head"><span><span class="title">Camarero y asistente de alimentos</span> <span class="sub">· Entre Cuatro Ltda., Chile</span></span><span class="meta">may 2020 – sep 2022</span></div>
+      <div class="other-item">
+        <div class="job-head"><span><span class="title">Asistente administrativo</span> <span class="sub">· Inversiones Aconcagua, Chile</span></span><span class="meta">may 2019 – abr 2020</span></div>
+        <div class="sub">Administración y logística: control de stock e inventario, pedidos, albaranes y facturación diaria; atención a proveedores.</div>
+      </div>
     </div>
   </section>
 </main>
