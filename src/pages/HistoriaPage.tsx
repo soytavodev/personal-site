@@ -40,9 +40,10 @@ export default function HistoriaPage() {
           <span className="story-kicker">02 / VENEZUELA Y CHILE</span>
           <p>
             Por la crisis de Venezuela tuve que irme del país y emigré a Chile.
-            Viví allí cinco años. Empecé repartiendo pedidos, muchas veces bajo
-            la lluvia, y después pasé a gestionar empresas que lo llevaban todo
-            en papel y Excel. Fueron años duros, y me enseñaron a no rendirme.
+            Viví allí seis años, de 2019 a 2025. Trabajé en hostelería, repartí
+            pedidos (muchas veces bajo la lluvia) y fui asistente administrativo
+            en empresas que lo llevaban todo en papel y Excel. Fueron años duros,
+            y me enseñaron a no rendirme.
           </p>
         </div>
         <div className="story-trio">

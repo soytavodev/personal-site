@@ -5,9 +5,7 @@
 <title>CV · Gustavo Delnardo</title>
 <meta name="author" content="Gustavo Delnardo" />
 <!--
-  Fuente del CV. Para generar el PDF:
-  abrir este archivo en Chrome → Imprimir → Guardar como PDF (A4, márgenes "Ninguno",
-  con "Gráficos de fondo" activado) y guardarlo como public/cv-gustavo-delnardo.pdf
+  Fuente del CV. Para generar public/cv-gustavo-delnardo.pdf: npm run cv
 -->
 <style>
   @font-face {
@@ -92,9 +90,12 @@
     color: var(--side-ink);
     font-size: 7.6pt;
   }
-  .langs { display: grid; gap: 4px; font-size: 8.2pt; }
-  .langs div { display: flex; justify-content: space-between; gap: 6px; }
-  .langs span { color: var(--side-muted); text-align: right; }
+  .langs { display: grid; gap: 7px; font-size: 8.2pt; }
+  .lang-head { display: flex; justify-content: space-between; gap: 6px; font-weight: 600; }
+  .lang-head span { color: var(--side-muted); font-weight: 400; text-align: right; }
+  .bar { height: 3px; margin-top: 3px; background: var(--side-line); }
+  .bar i { display: block; height: 100%; background: var(--side-accent); }
+  .lang-note { margin-top: 2px; color: var(--side-muted); font-size: 7.4pt; }
   .interests { color: var(--side-ink); font-size: 8.2pt; }
 
   /* Columna principal */
@@ -189,8 +190,15 @@
 
     <h2>Idiomas</h2>
     <div class="langs">
-      <div>Español <span>Nativo</span></div>
-      <div>Inglés <span>B2 (EF SET)</span></div>
+      <div class="lang">
+        <div class="lang-head">Español <span>Nativo</span></div>
+        <div class="bar"><i style="width: 100%"></i></div>
+      </div>
+      <div class="lang">
+        <div class="lang-head">Inglés <span>B2 · Intermedio alto</span></div>
+        <div class="bar"><i style="width: 70%"></i></div>
+        <div class="lang-note">Certificado EF SET</div>
+      </div>
     </div>
 
     <h2>Intereses</h2>
