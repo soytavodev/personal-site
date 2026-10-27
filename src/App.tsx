@@ -1,6 +1,7 @@
 import { NavLink, Link, Route, Routes, useLocation } from 'react-router-dom'
 import LogoMark from './components/LogoMark'
 import ScrollToTop from './components/ScrollToTop'
+import useSpotlight from './components/useSpotlight'
 import HomePage from './pages/HomePage'
 import PortfolioPage from './pages/PortfolioPage'
 import ProjectPage from './pages/ProjectPage'
@@ -35,6 +36,7 @@ function useBreadcrumb(): string[] {
 
 function App() {
   const breadcrumb = useBreadcrumb()
+  useSpotlight()
 
   return (
     <div className="app-shell">

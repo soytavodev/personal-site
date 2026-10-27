@@ -1,8 +1,11 @@
 import { AppWindow, Gamepad2, ShieldCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import Cifras from '../components/Cifras'
 import HeroTerminal from '../components/HeroTerminal'
 import ProjectCard from '../components/ProjectCard'
 import Reveal from '../components/Reveal'
+import Tecnologias from '../components/Tecnologias'
+import Trayectoria from '../components/Trayectoria'
 import usePageTitle from '../components/usePageTitle'
 import { projects } from '../data/projects'
 
@@ -72,6 +75,10 @@ export default function HomePage() {
       <HeroTerminal />
       </div>
 
+      <Reveal>
+        <Cifras />
+      </Reveal>
+
       <Reveal className="specialties">
         <div className="section-heading">
           <span>ÁREAS DE INTERÉS</span>
@@ -115,6 +122,12 @@ export default function HomePage() {
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
+      </Reveal>
+
+      <Trayectoria />
+
+      <Reveal>
+        <Tecnologias />
       </Reveal>
 
       <Reveal className="cta-panel">
