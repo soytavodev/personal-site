@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { projects, usesAI } from '../data/projects'
 
 // Cifras reales y actividad reciente en GitHub.
-// La actividad se pide a la API pública de GitHub desde el navegador del visitante
-// (una sola petición) y se guarda 30 minutos en sessionStorage. Si GitHub no
-// responde (por ejemplo, por su límite de 60 peticiones por hora), se muestra un
-// enlace al perfil en lugar de un error.
+// Primero se pide a /api/github (función de Vercel que guarda la respuesta 1 hora,
+// así no se agota el límite de 60 peticiones por hora de GitHub). Si falla, se
+// pregunta a GitHub directamente. El resultado se guarda 30 minutos en sessionStorage.
+// Si nada responde, se muestra un enlace al perfil en lugar de un error.
 
 type Repo = {
   name: string
@@ -46,12 +46,18 @@ export default function Cifras() {
   useEffect(() => {
     if (repos) return
     const control = new AbortController()
-    fetch(`https://api.github.com/users/${USUARIO}/repos?sort=pushed&per_page=100`, {
-      signal: control.signal,
-    })
-      .then((r) => {
-        if (!r.ok) throw new Error(`GitHub respondió ${r.status}`)
-        return r.json() as Promise<Repo[]>
+    const pedir = async (url: string) => {
+      const r = await fetch(url, { signal: control.signal })
+      // En local /api/github no existe y devuelve la página HTML: también cuenta como fallo
+      if (!r.ok || !r.headers.get('content-type')?.includes('json')) {
+        throw new Error(`${url} respondió ${r.status}`)
+      }
+      return (await r.json()) as Repo[]
+    }
+    pedir('/api/github')
+      .catch((e) => {
+        if (e.name === 'AbortError') throw e
+        return pedir(`https://api.github.com/users/${USUARIO}/repos?sort=pushed&per_page=100`)
       })
       .then((datos) => {
         // Fuera los forks (no son trabajo propio)
