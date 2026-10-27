@@ -27,7 +27,7 @@ const CAPITULOS: Capitulo[] = [
     titulo: 'Los videojuegos',
     parrafos: [
       'Nací en Cumaná, Venezuela, en 1990. Mi afición empezó con la NES: no me bastaba con jugar, quería saber cómo funcionaba.',
-      'Los juegos que más recuerdo son de la PlayStation. Crash Bandicoot (el 1, el 2, el 3 y Crash Team Racing) lo jugaba con mi papá y mi hermano, y en Bloody Roar se apuntaba hasta mi mamá. Y Final Fantasy VIII me marcó: sigue siendo uno de mis RPG por turnos favoritos.',
+      'Los juegos que más recuerdo son de la PlayStation. Crash Bandicoot (el 1, el 2, el 3 y Crash Team Racing) lo jugaba con mi papá y mi hermano, y en Bloody Roar se apuntaba hasta mi mamá. Mis padres ya fallecieron y mi hermano sigue en Venezuela, así que a esos juegos les tengo un cariño especial. Y Final Fantasy VIII me marcó: sigue siendo uno de mis RPG por turnos favoritos.',
       'Años después pasé al PC, y ahí empecé a pensar que me gustaría hacer mis propios juegos.',
     ],
     frase: 'No me bastaba con jugar: quería saber cómo funcionaba.',
@@ -80,7 +80,7 @@ const CAPITULOS: Capitulo[] = [
     etiqueta: 'Valencia',
     titulo: 'Desarrollador en formación',
     parrafos: [
-      'Estudio segundo de DAM y trabajo en hostelería mientras estudio. En 2026 hice las prácticas en JOCARSA, con Python, PHP e IA en local.',
+      'Estudio segundo de DAM y trabajo en hostelería mientras estudio. En 2026 hice las prácticas en JOCARSA, con Python, PHP e IA en local. Gracias a lo que me enseñaron mis padres, me estoy esforzando un montón.',
       'Siempre me ha gustado la tecnología, aunque la de punta nunca ha estado a mi alcance porque es cara. Me gusta ver cómo sus avances mejoran la vida de la gente. Y, aunque suene a tópico, los hackers de las películas, misteriosos y con su sudadera negra, también tuvieron algo que ver.',
       'Mi meta es hacer mi propio juego, algo en la línea de Hollow Knight o Castlevania: Symphony of the Night. Mientras tanto, cada proyecto me acerca un poco más.',
     ],
