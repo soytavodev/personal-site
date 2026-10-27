@@ -1,6 +1,16 @@
+import { AppWindow, Gamepad2, ShieldCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import HeroTerminal from '../components/HeroTerminal'
+import ProjectCard from '../components/ProjectCard'
+import Reveal from '../components/Reveal'
 import usePageTitle from '../components/usePageTitle'
 import { projects } from '../data/projects'
+
+// Proyectos que salen en la portada (los más recientes y completos)
+const PORTADA = ['analizador-ids', 'deeplens', 'chopcheck']
+const proyectosPortada = PORTADA.map((slug) => projects.find((p) => p.slug === slug)).filter(
+  (p) => p !== undefined,
+)
 
 export default function HomePage() {
   usePageTitle()
@@ -12,6 +22,7 @@ export default function HomePage() {
         WEB PERSONAL Y PORTFOLIO
       </div>
 
+      <div className="hero-grid">
       <div className="hero-copy">
         <p className="hero-greeting">Hola, soy Gustavo Delnardo.</p>
 
@@ -58,7 +69,10 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="specialties">
+      <HeroTerminal />
+      </div>
+
+      <Reveal className="specialties">
         <div className="section-heading">
           <span>ÁREAS DE INTERÉS</span>
           <span className="section-index">01 — 03</span>
@@ -67,50 +81,43 @@ export default function HomePage() {
         <div className="specialty-grid">
           <article className="specialty-card">
             <span className="card-number">01</span>
-            <div className="specialty-symbol" aria-hidden="true">⌘</div>
+            <div className="specialty-symbol" aria-hidden="true"><Gamepad2 size={19} strokeWidth={1.6} /></div>
             <h2>Videojuegos</h2>
             <p>Juego desde pequeño. Ahora quiero aprender a hacerlos.</p>
           </article>
 
           <article className="specialty-card">
             <span className="card-number">02</span>
-            <div className="specialty-symbol" aria-hidden="true">⌁</div>
+            <div className="specialty-symbol" aria-hidden="true"><ShieldCheck size={19} strokeWidth={1.6} /></div>
             <h2>Ciberseguridad</h2>
             <p>Quiero saber cómo se ataca una aplicación para hacerla más segura.</p>
           </article>
 
           <article className="specialty-card">
             <span className="card-number">03</span>
-            <div className="specialty-symbol" aria-hidden="true">◇</div>
+            <div className="specialty-symbol" aria-hidden="true"><AppWindow size={19} strokeWidth={1.6} /></div>
             <h2>Diseño web</h2>
             <p>Me gustan las páginas fáciles de usar y que se vean bien.</p>
           </article>
         </div>
-      </div>
+      </Reveal>
 
-      <div className="home-projects">
+      <Reveal className="home-projects">
         <div className="section-heading">
           <span>PROYECTOS</span>
           <Link className="section-index section-link" to="/portfolio">
-            VER TODOS ↗
+            VER LOS {projects.length} ↗
           </Link>
         </div>
 
-        <ul className="project-rows">
-          {projects.map((project) => (
-            <li key={project.slug}>
-              <Link to={`/portfolio/${project.slug}`}>
-                <span className="row-number">{project.number}</span>
-                <span className="row-title">{project.title}</span>
-                <span className="row-summary">{project.summary}</span>
-                <span className="row-arrow" aria-hidden="true">↗</span>
-              </Link>
-            </li>
+        <div className="home-project-grid">
+          {proyectosPortada.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
           ))}
-        </ul>
-      </div>
+        </div>
+      </Reveal>
 
-      <div className="cta-panel">
+      <Reveal className="cta-panel">
         <div>
           <h2>¿Construimos algo juntos?</h2>
           <p>
@@ -121,7 +128,7 @@ export default function HomePage() {
         <Link className="button-primary" to="/contacto">
           Escríbeme <span aria-hidden="true">↗</span>
         </Link>
-      </div>
+      </Reveal>
 
       <div className="hero-meta">
         <span>VALENCIA, ESPAÑA</span>

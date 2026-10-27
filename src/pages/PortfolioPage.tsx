@@ -1,50 +1,62 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import ProjectCard from '../components/ProjectCard'
+import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import usePageTitle from '../components/usePageTitle'
-import { projects } from '../data/projects'
+import { projects, usesAI, type Project } from '../data/projects'
+
+const FILTROS: { id: string; label: string; incluye: (p: Project) => boolean }[] = [
+  { id: 'todos', label: 'Todos', incluye: () => true },
+  { id: 'php', label: 'PHP', incluye: (p) => p.stack.includes('PHP') },
+  { id: 'python', label: 'Python', incluye: (p) => p.stack.includes('Python') },
+  { id: 'ia', label: 'IA', incluye: usesAI },
+]
 
 export default function PortfolioPage() {
   usePageTitle('Portfolio')
+  const [filtro, setFiltro] = useState('todos')
+
+  const activo = FILTROS.find((f) => f.id === filtro) ?? FILTROS[0]
+  const visibles = projects.filter(activo.incluye)
+  // Con «Todos», el destacado va arriba en grande y el resto en la cuadrícula
+  const destacado = filtro === 'todos' ? visibles.find((p) => p.featured) : undefined
+  const resto = visibles.filter((p) => p !== destacado)
 
   return (
     <section className="wide-section">
       <SectionHeading number="02" label="PORTFOLIO" title="Proyectos." />
 
       <p className="section-intro">
-        Proyectos desarrollados durante mi formación. Cada uno enlaza a su
-        código o a su versión en línea cuando está disponible.
+        Proyectos que he hecho durante mi formación y mis prácticas. Cada uno
+        enlaza a su código, con capturas y lo que aprendí haciéndolo.
       </p>
 
-      <div className="project-grid">
-        {projects.map((project) => (
-          <Link
-            key={project.slug}
-            to={`/portfolio/${project.slug}`}
-            className="project-card"
+      <div className="project-filters" role="group" aria-label="Filtrar proyectos">
+        {FILTROS.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            className={`filter-chip${f.id === filtro ? ' active' : ''}`}
+            aria-pressed={f.id === filtro}
+            onClick={() => setFiltro(f.id)}
           >
-            <div className="project-thumb">
-              <img
-                src={project.media.find((m) => m.type === 'image')?.src}
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            {f.label}
+            <span>{projects.filter(f.incluye).length}</span>
+          </button>
+        ))}
+      </div>
 
-            <div className="project-card-body">
-              <div className="project-card-top">
-                <span className="card-number-inline">{project.number}</span>
-                <span className="card-arrow-inline" aria-hidden="true">↗</span>
-              </div>
-              <h2>{project.title}</h2>
-              <p>{project.summary}</p>
-              <ul className="tag-list">
-                {project.stack.map((tech) => (
-                  <li key={tech} className="technology-tag">{tech}</li>
-                ))}
-              </ul>
-            </div>
-          </Link>
+      {destacado && (
+        <Reveal>
+          <ProjectCard project={destacado} featured />
+        </Reveal>
+      )}
+
+      <div className="project-grid">
+        {resto.map((project, i) => (
+          <Reveal key={`${filtro}-${project.slug}`} delay={(i % 2) * 80}>
+            <ProjectCard project={project} />
+          </Reveal>
         ))}
       </div>
     </section>

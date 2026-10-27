@@ -33,6 +33,10 @@ export default function AboutPage() {
             aunque también me interesan la ciberseguridad y el desarrollo web.
           </p>
 
+          <blockquote className="about-quote">
+            <p>Nunca es tarde para empezar de nuevo.</p>
+          </blockquote>
+
           <p>
             Hoy la inteligencia artificial escribe mucho código, pero creo que
             hay que entender lo que hace cada parte. Si no lo entiendes, no
@@ -43,12 +47,16 @@ export default function AboutPage() {
             <strong>Sigo aprendiendo y haciendo proyectos.</strong> Los que
             tengo terminados están en el portfolio.
           </p>
+
+          <Link className="button-secondary story-link" to="/historia">
+            Leer mi historia completa <span aria-hidden="true">↗</span>
+          </Link>
         </div>
 
         <figure className="about-portrait">
           <img
             src="/images/gustavo-profile.webp"
-            alt="Retrato en blanco y negro de Gustavo Delnardo"
+            alt="Retrato de Gustavo Delnardo"
             loading="lazy"
             decoding="async"
           />
@@ -58,17 +66,6 @@ export default function AboutPage() {
           </figcaption>
         </figure>
       </div>
-
-      <blockquote className="about-quote">
-        <span className="quote-mark" aria-hidden="true">“</span>
-        <p>
-          Nunca es tarde para empezar de nuevo.
-        </p>
-      </blockquote>
-
-      <Link className="button-secondary story-link" to="/historia">
-        Leer mi historia completa <span aria-hidden="true">↗</span>
-      </Link>
     </section>
   )
 }

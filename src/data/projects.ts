@@ -18,13 +18,24 @@ export interface Project {
   stack: string[]
   links: ProjectLink[]
   media: ProjectMedia[]
+  /** Imagen para las tarjetas (la que mejor se ve a tamaño pequeño). */
+  thumb: string
+  /** La miniatura es una captura clara: se oscurece más para igualarla con las demás. */
+  thumbClara?: boolean
+  /** Proyecto destacado: sale en grande en el portfolio y en la portada. */
+  featured?: boolean
 }
+
+/** Proyectos que usan IA (para el filtro del portfolio). */
+export const usesAI = (project: Project) => project.stack.includes('Ollama')
 
 // Textos comprobados con el código de cada repositorio (revisión del 20/10/2026).
 // Si cambia un proyecto, actualizar aquí solo lo que se pueda ver en su código.
 export const projects: Project[] = [
   {
     slug: 'chopcheck',
+    thumb: '/projects/chopcheck-admin.webp',
+    thumbClara: true,
     number: '01',
     title: 'ChopCheck',
     summary: 'Aplicación web para dividir la cuenta de una mesa entre sus comensales.',
@@ -43,6 +54,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'guessit',
+    thumb: '/projects/guessit-juego.webp',
     number: '02',
     title: 'GuessIT!',
     summary: 'Juego de preguntas de cultura general con cuentas de usuario y ranking.',
@@ -62,6 +74,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'changeit',
+    thumb: '/projects/changeit-1.webp',
     number: '03',
     title: 'ChangeIT!',
     summary: 'Conversor de divisas que obtiene las tasas de cambio de una API externa.',
@@ -78,6 +91,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'analizador-ids',
+    thumb: '/projects/analizador-ids-reglas.webp',
+    featured: true,
     number: '04',
     title: 'Analizador IDS',
     summary: 'Prototipo de detector de intrusos que revisa los accesos a una web y busca ataques.',
@@ -97,6 +112,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'deeplens',
+    thumb: '/projects/deeplens-guessit.webp',
+    thumbClara: true,
     number: '05',
     title: 'DeepLens',
     summary: 'Genera capturas de las pantallas de un proyecto web a partir de su código, con IA local.',
